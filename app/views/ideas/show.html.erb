@@ -21,7 +21,7 @@
       <%= f.submit "like", class: "btn btn-warning btn-block" %>
       <% @liked_by_currentuser = true %>
       <% else %>
-      <span class="btn btn-warning btn-block">Liked</span>
+      <button type="button" class="btn btn-warning btn-block" disabled>Liked</button>
       <% end %>
     </div>
   </div>
