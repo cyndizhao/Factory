@@ -1,0 +1,52 @@
+<!-- <div class="container"> -->
+  <h1 style="display:inline-block">Show all ideas</h1>
+  <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#myModal">Create A Idea?</button>
+<!-- </div> -->
+
+
+<% @ideas.each do |idea| %>
+    <hr>
+
+    <h5 class ="creator"><%= idea.title %></h5>
+    <p class = "ideaContent magic"><%= idea.body %></p>
+
+
+    <span style="width:80px; display:inline-block;"><%= idea.user.first_name %></span>
+    <%= link_to 'View This Idea', idea_path(idea.id), class:'btn btn-info'%>
+<!-- , "data-target" => "#createPost" ,'data-toggle' => "modal" -->
+
+    <button class ="btn btn-info" type="button" name="button">Join</button>
+    <button class ="btn btn-info" type="button" name="button">Like</button>
+    <span class="pull-right">Likes: <%= idea.likes.count %></span>
+    <span class="pull-right">|</span>
+    <span class="pull-right">Member: 5 </span>
+
+
+    <%# link_to "#{idea.user}" %>
+
+<% end %>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="container" id="createPost">
+    	<div class="row">
+    		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
+    			<h1>Create Your Idea</h1>
+    			<%= form_for @ideatest do |f| %>
+    			<div class="form-group">
+    				<%= f.label :title %>
+    				<%= f.text_field :title, class:"form-control" %>
+    			</div>
+    			<div class="form-group">
+    				<%= f.label :body %>
+    				<%= f.text_area :body, rows:"8", class:"form-control"%>
+    			</div>
+    			<div class="form-group">
+    				<%= f.submit "Create", class:"btn btn-primary"%>
+    			</div>
+    			<% end %>
+    		</div>
+    	</div>
+    </div>
+  </div>
+</div>
