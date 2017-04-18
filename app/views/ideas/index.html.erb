@@ -1,7 +1,7 @@
-<!-- <div class="container"> -->
-  <h1 style="display:inline-block">Show all ideas</h1>
-  <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#myModal">Create A Idea?</button>
-<!-- </div> -->
+
+<h1 style="display:inline-block">Show all ideas</h1>
+<button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#myModal">Create A Idea?</button>
+
 
 
 <% @ideas.each do |idea| %>
@@ -13,10 +13,9 @@
 
     <span style="width:80px; display:inline-block;"><%= idea.user.first_name %></span>
     <%= link_to 'View This Idea', idea_path(idea.id), class:'btn btn-info'%>
-<!-- , "data-target" => "#createPost" ,'data-toggle' => "modal" -->
 
     <button class ="btn btn-info" type="button" name="button">Join</button>
-    <button class ="btn btn-info" type="button" name="button">Like</button>
+    <!-- <button class ="btn btn-info" type="button" name="button">Like</button> -->
     <span class="pull-right">Likes: <%= idea.likes.count %></span>
     <span class="pull-right">|</span>
     <span class="pull-right">Member: 5 </span>

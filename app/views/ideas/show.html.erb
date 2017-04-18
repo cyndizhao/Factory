@@ -1,4 +1,4 @@
-<h1>show single idea</h1>
+
 <div class="">
   <h3>Creator: <%= @idea.user.first_name %></h3>
   <h3>Idea Title: <%= @idea.title %></h3>
@@ -11,22 +11,22 @@
   <% end %>
 </div>
 
-
+<br>
 
 
 <%= form_for [@idea, @like] do |f| %>
   <div class="form-group ">
-    <div class="col-md-1 col-xs-2 pull-right" style="padding-left:0px;">
+    <div class="col-md-1 col-xs-2" style="padding-left:0px;">
       <% if @liked_by_currentuser === false %>
-      <%= f.submit "like", class: "btn btn-info btn-block" %>
+      <%= f.submit "like", class: "btn btn-warning btn-block" %>
       <% @liked_by_currentuser = true %>
       <% else %>
-      <span class="btn btn-info btn-block">Liked</span>
+      <span class="btn btn-warning btn-block">Liked</span>
       <% end %>
     </div>
   </div>
 <% end %>
-
+<br>
 <br>
 <br>
 
